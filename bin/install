@@ -59,10 +59,8 @@ get_filename() {
   local version="$1"
   local platform="$2"
   local binary_name="$3"
-  local version_short
-  version_short="$(echo "$version" | tr -d 'v')"
 
-  echo "prometheus-${version_short}.${platform}.tar.gz"
+  echo "prometheus-${version}.${platform}.tar.gz"
 }
 
 # https://github.com/prometheus/prometheus/releases/download/v2.11.1/prometheus-2.11.1.linux-amd64.tar.gz
@@ -74,7 +72,7 @@ get_download_url() {
   local filename
   filename="$(get_filename "$version" "$platform" "$binary_name")"
 
-  echo "https://github.com/prometheus/prometheus/releases/download/${version}/${filename}"
+  echo "https://github.com/prometheus/prometheus/releases/download/v${version}/${filename}"
 }
 
 tmp_download_dir="$(mktemp -d -t 'asdf_XXXXXXXX')"

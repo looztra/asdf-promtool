@@ -2,6 +2,7 @@ language: c
 env:
   - TOOL_NAME=promtool TOOL_VERSION=v2.11.1 TOOL_TEST_COMMAND='promtool --version'
 before_script:
+  - sudo apt-get -y install jq
   - git clone https://github.com/asdf-vm/asdf.git
   - . asdf/asdf.sh
 script:
