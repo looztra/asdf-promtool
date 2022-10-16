@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+# List all versions using the command and keep the latest
+set -euo pipefail
+#ORIGINAL_IFS=$IFS
+IFS=$'\t\n' # Stricter IFS settings
+
+plugin_dir=$(dirname "$0")
+# shellcheck disable=SC2086
+versions=$(${plugin_dir}/list-all)
+echo ${versions##* }
