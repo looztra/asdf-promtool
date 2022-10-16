@@ -8,4 +8,5 @@ IFS=$'\t\n' # Stricter IFS settings
 plugin_dir=$(dirname "$0")
 # shellcheck disable=SC2086
 versions=$(${plugin_dir}/list-all)
+# shellcheck disable=SC2086
 echo ${versions##* }
